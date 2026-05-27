@@ -6,7 +6,7 @@ import hero2 from './assets/Images/hero2.jpg';
 const slides = [
   {
     image: hero1,
-    welcome: 'WELCOME TO VACATION HOUSES HOTEL',
+    welcome: 'WELCOME TO SHERATON HOTEL',
     title: ['Stay In Our Luxury', 'Suites & Rooms'],
     cta: 'ROOMS & SUITES',
   },
