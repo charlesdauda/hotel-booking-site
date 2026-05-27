@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import hotelLogo from './assets/Images/hotellogo.png';
+import hotelLogo from './assets/Images/hotelLogo.png';
 import { FaShoppingCart } from 'react-icons/fa';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
 
