@@ -5,8 +5,8 @@ import { FaInstagram, FaTiktok } from 'react-icons/fa6';
 import { FaLinkedinIn, FaTwitter,} from 'react-icons/fa';
 
 const contactItems = [
-  { icon: <MdOutlineEmail />, text: 'needhelp@company.com' },
-  { icon: <IoLocationSharp />, text: '6391 Elgin St. Celina, 10299' },
+  { icon: <MdOutlineEmail />, text: 'charlesdauda676@gmail.com' },
+  { icon: <IoLocationSharp />, text: 'McCarthy Hills, Accra' },
   { icon: <FaRegClock />, text: 'Sunday - Friday: 9.am - 8pm' },
 ];
 
@@ -19,7 +19,7 @@ const socialLinks = [
 
 const TopBar = () => {
   return (
-    <section className="bg-black text-white text-sm border-b border-[#d4af6f]/40">
+    <section className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-black text-white text-sm border-b border-[#d4af6f]/40">
       <div className="max-w-7xl mx-auto px-6 py-3 flex flex-col md:flex-row items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-6">
           {contactItems.map((item, i) => (

@@ -1,1 +1,5 @@
-@import 'tailwindcss'
+@import "tailwindcss";
+
+:root {
+  --font-serif: "Playfair Display", Georgia, serif;
+}
