@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import hotelLogo from './assets/Images/hotellogo.png';
+import hotelLogo from './assets/Images/hotelLogo.png';
 import hero1 from './assets/Images/hero1.jpg';
 import hero2 from './assets/Images/hero2.jpg';
 
