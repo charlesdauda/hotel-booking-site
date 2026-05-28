@@ -82,7 +82,7 @@ const Hero = () => {
                 ))}
               </h1>
 
-              <button className="mt-12 border border-white/90 text-white text-[12px] tracking-[0.25em] font-semibold px-10 py-4 hover:bg-[#bf9b6a] hover:border-[#bf9b6a] transition-all duration-300">
+              <button className="mt-12 border border-white/90 text-white text-[12px] tracking-[0.25em] font-semibold px-10 py-4 hover:bg-[#bf9b6a] hover:border-[#bf9b6a] transition-all duration-300  rounded-sm">
                 {slide.cta}
               </button>
             </div>
