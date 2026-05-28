@@ -1,15 +1,19 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import TopBar from './TopBar';
 import NavBar from './NavBar';
-import Hero from './Hero';
+import Home from './pages/Home';
 
 const App = () => {
   return (
-    <section>
+    <BrowserRouter>
+      {/* Persistent layout — shows on every page */}
       <TopBar />
       <NavBar />
-      <Hero />
-    </section>
-  )
-}
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 export default App;
