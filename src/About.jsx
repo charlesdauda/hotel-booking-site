@@ -91,7 +91,7 @@ const About = () => {
 
           {/* CTA row */}
           <div className="flex flex-wrap items-center gap-8">
-            <button className="bg-[#bf9b6a] hover:bg-[#a8895d] text-white text-sm font-semibold px-8 py-4 tracking-[0.15em] transition-colors">
+            <button className="bg-[#bf9b6a] hover:bg-[#a8895d] text-white text-sm font-semibold px-8 py-4 tracking-[0.15em] transition-colors border rounded-sm">
               DISCOVER MORE
             </button>
 

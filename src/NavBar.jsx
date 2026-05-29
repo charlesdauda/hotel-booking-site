@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import hotelLogo from './assets/Images/hotelLogo.png';
-import { FaShoppingCart } from 'react-icons/fa';
+import { IoBedSharp } from "react-icons/io5";
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
 
 const navLinks = [
@@ -50,7 +50,7 @@ const NavBar = () => {
             </button>
 
             <div className="relative">
-              <FaShoppingCart className="text-xl text-gray-700" />
+              <IoBedSharp className="text-xl text-gray-700" />
               <span className="absolute -top-2 -right-2 bg-[#bf9b6a] text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
                 0
               </span>

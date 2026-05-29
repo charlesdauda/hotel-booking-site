@@ -1,12 +1,12 @@
 import { FaBed, FaPlaneDeparture, FaWifi, FaConciergeBell, FaSwimmingPool, FaCar } from 'react-icons/fa';
 
 const services = [
-  { icon: FaBed,            title: 'Room Service',   desc: 'Orci varius natoque penatibus magnis ders disney parturient ridiculus' },
-  { icon: FaPlaneDeparture, title: 'Pick Up & Drop', desc: 'Orci varius natoque penatibus magnis ders disney parturient ridiculus' },
-  { icon: FaWifi,           title: 'Wifi Internet',  desc: 'Orci varius natoque penatibus magnis ders disney parturient ridiculus' },
-  { icon: FaConciergeBell,  title: 'Breakfast',      desc: 'Orci varius natoque penatibus magnis ders disney parturient ridiculus' },
-  { icon: FaSwimmingPool,   title: 'Swimming Pool',  desc: 'Orci varius natoque penatibus magnis ders disney parturient ridiculus' },
-  { icon: FaCar,            title: 'Parking Space',  desc: 'Orci varius natoque penatibus magnis ders disney parturient ridiculus' },
+  { icon: FaBed,            title: 'Room Service',   desc: 'Round-the-clock dining brought to your door, from light bites to full chef-crafted meals.' },
+  { icon: FaPlaneDeparture, title: 'Pick Up & Drop', desc: 'Complimentary airport transfers in our private fleet arrive rested, leave on schedule.' },
+  { icon: FaWifi,           title: 'Wifi Internet',  desc: 'High-speed fibre Wi-Fi reaching every room, suite, and quiet corner of the property.' },
+  { icon: FaConciergeBell,  title: 'Breakfast',      desc: 'A generous continental and à la carte breakfast served fresh each morning until 11am.' },
+  { icon: FaSwimmingPool,   title: 'Swimming Pool',  desc: 'Heated outdoor pool with poolside service, sun loungers, and uninterrupted skyline views.' },
+  { icon: FaCar,            title: 'Parking Space',  desc: 'Secure on-site parking with 24/7 valet service and CCTV across every level.' },
 ];
 
 const Services = () => {

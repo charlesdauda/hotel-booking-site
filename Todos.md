@@ -6,9 +6,9 @@
 - [x] Set Up project Structure
 - [x] Create a TopBar and NavBar for the site
 - [x] Create a hero section with an image carousel
-- [] Create an about section highliting  some images and buttons
-- [] Create a services section to showcase the kind of services they offer
-- [] Create a best price section to show case the prices per night  
+- [x] Create an about section highliting  some images and buttons
+- [x] Create a services section to showcase the kind of services they offer
+- [x] Create a best price section to show case the prices per night  
 - [] Eat food section to show hotel facilities and accomodation
 - [] Create a banner 
 - [] Create a testimonial cards section
