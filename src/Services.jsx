@@ -19,7 +19,7 @@ const Services = () => {
           <div className="flex items-center justify-center gap-4 mb-4">
             <span className="h-px w-12 bg-[#bf9b6a]" />
             <span className="text-[#bf9b6a] text-sm font-semibold tracking-[0.3em] uppercase">
-              Vacation Houses Services
+              Sheraton Hotels &amp; Resorts
             </span>
             <span className="h-px w-12 bg-[#bf9b6a]" />
           </div>
