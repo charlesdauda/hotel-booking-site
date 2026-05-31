@@ -4,6 +4,8 @@ import Rooms from '../Rooms';
 import Services from '../Services';
 import Promo from '../Promo';
 import FeaturedRooms from '../FeaturedRooms';
+import Hospitality from '../Hospitality';
+import Stats from '../Stats';
 
 const Home = () => {
   return (
@@ -14,6 +16,8 @@ const Home = () => {
       <Services />
       <Promo />
       <FeaturedRooms />
+      <Hospitality />
+      <Stats />
     </>
   );
 };
