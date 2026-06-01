@@ -9,11 +9,11 @@
 - [x] Create an about section highliting  some images and buttons
 - [x] Create a services section to showcase the kind of services they offer
 - [x] Create a best price section to show case the prices per night  
-- [] Eat food section to show hotel facilities and accomodation
-- [] Create a banner 
-- [] Create a testimonial cards section
-- [] Create a card showcasing sponsors and their logo
-- [] Create a footer 
+- [x] Eat food section to show hotel facilities and accomodation
+- [x] Create a banner 
+- [x] Create a testimonial cards section
+- [x] Create a card showcasing sponsors and their logo
+- [x] Create a footer 
 
 ## About Page
 - [] Create about page 
