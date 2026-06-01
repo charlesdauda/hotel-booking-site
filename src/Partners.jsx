@@ -16,12 +16,14 @@ const Partners = () => {
   return (
     <section className="bg-white py-14 md:py-20 overflow-hidden">
       <div className="group">
-        <div className="flex gap-16 lg:gap-20 items-center w-max animate-[marquee_25s_linear_infinite] group-hover:[animation-play-state:paused]">
+        <div className="flex gap-16 lg:gap-20 items-center w-max animate-[marquee_25s_linear_infinite] group-hover:[animation-play-state:paused] will-change-transform motion-reduce:animate-none">
           {[...partners, ...partners].map((p, i) => (
             <div key={i} className="shrink-0 flex items-center justify-center">
               <img
                 src={p.src}
                 alt={p.name}
+                loading="lazy"
+                decoding="async"
                 className="h-20 lg:h-24 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
@@ -31,8 +33,8 @@ const Partners = () => {
 
       <style>{`
         @keyframes marquee {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
+          from { transform: translate3d(0, 0, 0); }
+          to { transform: translate3d(-50%, 0, 0); }
         }
       `}</style>
     </section>

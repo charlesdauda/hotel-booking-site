@@ -128,7 +128,7 @@ const Footer = () => {
       {/* ===== Bottom bar ===== */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-gray-400">
-          <p>© Copyright {new Date().getFullYear()} Vacation Houses. All rights reserved.</p>
+          <p className="text-center md:text-left">© Copyright {new Date().getFullYear()} Sheraton Hotel & Suites. All rights reserved.</p>
           <div className="flex gap-3">
             <a href="#" className="hover:text-[#bf9b6a] transition-colors">Help</a>
             <span>/</span>
