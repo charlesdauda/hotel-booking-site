@@ -14,7 +14,7 @@ const partners = [
 
 const Partners = () => {
   return (
-    <section className="bg-white py-14 md:py-20 overflow-hidden">
+    <section className="hidden md:block bg-white py-14 md:py-20 overflow-hidden">
       <div className="group">
         <div className="flex gap-16 lg:gap-20 items-center w-max animate-[marquee_25s_linear_infinite] group-hover:[animation-play-state:paused] will-change-transform motion-reduce:animate-none">
           {[...partners, ...partners].map((p, i) => (
