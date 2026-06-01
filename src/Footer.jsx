@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaTwitter, FaFacebookF, FaYoutube, FaInstagram, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaArrowsAlt } from 'react-icons/fa';
-import hotelLogo from './assets/Images/hotellogo.png';
+import hotelLogo from './assets/Images/hotelLogo.png';
 import news1 from './assets/Images/room4.jpg';
 import news2 from './assets/Images/room2.jpg';
 
