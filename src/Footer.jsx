@@ -35,7 +35,6 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
 
-          {/* ----- Column 1: brand ----- */}
           <div>
             <img
               src={hotelLogo}
@@ -62,7 +61,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* ----- Column 2: links ----- */}
           <div>
             <h3 className="font-serif text-2xl mb-6">Services Links</h3>
             <div className="grid grid-cols-2 gap-y-4 gap-x-3">
@@ -79,7 +77,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* ----- Column 3: latest news ----- */}
           <div>
             <h3 className="font-serif text-2xl mb-6">Latest News</h3>
             <div className="space-y-5">
@@ -125,7 +122,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* ===== Bottom bar ===== */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-gray-400">
           <p className="text-center md:text-left">© Copyright {new Date().getFullYear()} Sheraton Hotel & Suites. All rights reserved.</p>

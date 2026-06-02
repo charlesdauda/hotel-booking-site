@@ -17,14 +17,13 @@ const About = () => {
                   alt="Luxury room interior"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-                {/* Shine sweep — plays once, no reverse */}
+
                 <div className="pointer-events-none absolute inset-0">
                   <div className="absolute inset-y-0 left-0 w-1/3 skew-x-12 bg-linear-to-r from-transparent via-white/55 to-transparent translate-x-[-250%] group-hover:translate-x-[350%] transition-transform duration-0 group-hover:duration-800 ease-in-out" />
                 </div>
               </div>
             </div>
 
-            {/* Second image (bottom-right) with shine */}
             <div className="mt-6 lg:mt-0 lg:absolute lg:bottom-0 lg:right-0 lg:w-[48%] lg:h-72 lg:border-[6px] lg:border-white z-10">
               <div className="group relative w-full h-56 lg:h-full overflow-hidden">
                 <img
@@ -73,7 +72,6 @@ const About = () => {
             Enjoy exceptional hospitality, luxurious rooms, and a peaceful atmosphere designed to give you comfort, relaxation, and a truly memorable stay experience.
           </p>
 
-          {/* Feature highlights */}
           <div className="grid grid-cols-2 gap-6 mb-10">
             <div className="flex items-center gap-4">
               <FaRegLightbulb className="text-[#bf9b6a] text-4xl shrink-0" />
@@ -89,7 +87,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* CTA row */}
           <div className="flex flex-wrap items-center gap-8">
             <button className="bg-[#bf9b6a] hover:bg-[#a8895d] text-white text-sm font-semibold px-8 py-4 tracking-[0.15em] transition-colors border rounded-sm">
               DISCOVER MORE
