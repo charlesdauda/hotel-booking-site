@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import hotelLogo from './assets/Images/hotelLogo.png';
 import { IoBedSharp } from "react-icons/io5";
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
 
 const navLinks = [
-  { name: 'Home', link: '#' },
-  { name: 'About', link: '#' },
-  { name: 'Gallery', link: '#' },
-  { name: 'Room Suites', link: '#' },
-  { name: 'Contact', link: '#' },
+  { name: 'Home',        link: '/' },
+  { name: 'About',       link: '/about' },
+  { name: 'Gallery',     link: '/gallery' },
+  { name: 'Room Suites', link: '/rooms-suites' },
+  { name: 'Contact',     link: '/contact' },
 ];
 
 const NavBar = () => {
@@ -25,20 +26,20 @@ const NavBar = () => {
         <div className="max-w-7xl mx-auto px-6 h-full py-4 flex items-center justify-between">
 
           {/* Logo */}
-          <a href="#" className="flex items-center h-full">
+          <Link to="/" className="flex items-center h-full">
             <img src={hotelLogo} alt="Hotel Logo" className="h-28 w-auto" />
-          </a>
+          </Link>
 
           {/* Nav links */}
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((item, i) => (
               <li key={i}>
-                <a
-                  href={item.link}
+                <Link
+                  to={item.link}
                   className="text-sm font-medium text-gray-500 hover:text-[#bf9b6a] transition-colors uppercase tracking-wide"
                 >
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -78,13 +79,13 @@ const NavBar = () => {
         <ul className="flex flex-col px-6 py-8 gap-6">
           {navLinks.map((item, i) => (
             <li key={i}>
-              <a
-                href={item.link}
+              <Link
+                to={item.link}
                 onClick={() => setMenuOpen(false)}
                 className="text-base font-medium text-gray-800 hover:text-[#bf9b6a] transition-colors uppercase tracking-wide"
               >
                 {item.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

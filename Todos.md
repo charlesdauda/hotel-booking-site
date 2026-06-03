@@ -16,12 +16,12 @@
 - [x] Create a footer 
 
 ## About Page
-- [] Create about page 
-- [] Create an about section highliting  some images and buttons
-- [] Create luxury rooms with images 
-- [] Create a promotional video, like a banner
-- [] Hotel Facilities
-- [] Import footer
+- [x] Create about page 
+- [x] Create an about section highliting  some images and buttons
+- [x] Create luxury rooms with images 
+- [x] Create a promotional video, like a banner
+- [x] Hotel Facilities
+- [x] Import footer
 
 ## Gallery Page
 - [] Gallery page with images
