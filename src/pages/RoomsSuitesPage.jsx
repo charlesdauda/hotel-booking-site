@@ -40,7 +40,7 @@ const RoomsSuitesPage = () => {
 
         return (
           <section key={i} className="grid lg:grid-cols-2 bg-white">
-            {/* Image column — floats with outer-side padding */}
+
             <div className={`flex items-center lg:py-12 ${
               imageLeft
                 ? 'lg:pl-12 xl:pl-20'
@@ -54,7 +54,6 @@ const RoomsSuitesPage = () => {
               />
             </div>
 
-            {/* Cream content card */}
             <div className={`bg-[#f5ede0] p-10 lg:p-16 relative flex flex-col justify-center ${imageLeft ? '' : 'lg:order-1'}`}>
               {/* Gold accent bar */}
               <span className="absolute top-0 left-10 lg:left-16 w-20 h-1.5 bg-[#bf9b6a]" />
