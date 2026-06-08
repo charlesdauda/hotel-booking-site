@@ -20,8 +20,6 @@ const Rooms = () => {
   return (
     <section className="bg-[#f6f2ea] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6">
-
-        {/* Section header */}
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-4 mb-4">
             <span className="h-px w-12 bg-[#bf9b6a]" />
@@ -35,7 +33,6 @@ const Rooms = () => {
           </h2>
         </div>
 
-        {/* Cards grid */}
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {rooms.map((room, i) => {
             const isActive = activeIndex === i;
@@ -45,20 +42,17 @@ const Rooms = () => {
                 onClick={() => setActiveIndex(isActive ? null : i)}
                 className="group relative overflow-hidden aspect-16/10 cursor-pointer"
               >
-                {/* Image (premium zoom) */}
+
                 <img
                   src={room.image}
                   alt={room.name}
                   className={`w-full h-full object-cover transition-transform duration-800 ease-out group-hover:scale-110 ${isActive ? 'scale-110' : ''}`}
                 />
 
-                {/* Base gradient for legibility */}
                 <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
 
-                {/* Hover/active darken */}
                 <div className={`absolute inset-0 transition-colors duration-500 group-hover:bg-black/40 ${isActive ? 'bg-black/40' : 'bg-black/0'}`} />
 
-                {/* Title + price (lifts up on hover/active) */}
                 <div className={`absolute inset-x-0 bottom-0 p-6 lg:p-8 text-right transition-transform duration-500 ease-out group-hover:-translate-y-14 ${isActive ? '-translate-y-14' : ''}`}>
                   <h3 className="font-serif text-2xl lg:text-3xl text-white">
                     {room.name}
@@ -69,7 +63,6 @@ const Rooms = () => {
                   </p>
                 </div>
 
-                {/* Action row — fades in at bottom on hover/active */}
                 <div className={`absolute inset-x-0 bottom-0 px-6 lg:px-8 pb-6 lg:pb-7 flex items-center justify-between transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                   <button
                     onClick={(e) => e.stopPropagation()}

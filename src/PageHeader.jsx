@@ -4,13 +4,11 @@ import { FaChevronRight } from 'react-icons/fa';
 const PageHeader = ({ title, bgImage }) => {
   return (
     <section className="relative mt-20 md:mt-31 h-95 md:h-115 overflow-hidden">
-      {/* Background image */}
       <img
         src={bgImage}
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
       />
-      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/70" />
 
       {/* Content */}

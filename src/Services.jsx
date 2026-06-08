@@ -14,7 +14,6 @@ const Services = () => {
     <section className="bg-white py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Section header */}
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-4 mb-4">
             <span className="h-px w-12 bg-[#bf9b6a]" />
@@ -28,7 +27,7 @@ const Services = () => {
           </h2>
         </div>
 
-        {/* Cards grid */}
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => {
             const Icon = service.icon;
@@ -37,18 +36,14 @@ const Services = () => {
                 key={i}
                 className="group relative border border-gray-200 p-10 lg:p-12 text-center bg-white hover:bg-[#1a1a1a] transition-colors duration-500 cursor-pointer"
               >
-                {/* Top accent bar */}
                 <span className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-1.5 bg-[#f0e0c0] group-hover:opacity-0 transition-opacity duration-500" />
-
-                {/* Icon */}
+                
                 <Icon className="text-6xl text-[#bf9b6a] mx-auto mb-6 group-hover:text-white transition-colors duration-500" />
 
-                {/* Title */}
                 <h3 className="font-serif text-2xl text-gray-900 mb-4 group-hover:text-white transition-colors duration-500">
                   {service.title}
                 </h3>
 
-                {/* Description */}
                 <p className="text-gray-500 leading-relaxed group-hover:text-white/80 transition-colors duration-500">
                   {service.desc}
                 </p>

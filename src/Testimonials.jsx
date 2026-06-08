@@ -28,8 +28,7 @@ const Testimonials = () => {
   return (
     <section className="bg-[#262626] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6">
-
-        {/* Section header */}
+        
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-4 mb-4">
             <span className="h-px w-12 bg-[#bf9b6a]" />
@@ -43,22 +42,17 @@ const Testimonials = () => {
           </h2>
         </div>
 
-        {/* Cards grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((t, i) => (
             <div key={i} className="relative bg-white p-8 lg:p-10 text-center shadow-xl">
-              {/* Top accent bar */}
+
               <span className="absolute top-0 left-1/2 -translate-x-1/2 w-14 h-1.5 bg-[#bf9b6a]" />
 
-              {/* Name */}
               <h3 className="font-serif text-2xl text-gray-900 mt-2 mb-2">{t.name}</h3>
 
-              {/* Role */}
               <p className="text-[#bf9b6a] text-xs font-semibold tracking-[0.25em] uppercase mb-6">
                 {t.role}
               </p>
-
-             {/* Photo with checkmark badge */}
                 <div className="relative w-32 h-32 mx-auto mb-10">
                 <img
                     src={t.photo}
@@ -69,8 +63,6 @@ const Testimonials = () => {
                     <FaCheck className="text-white text-sm" />
                 </span>
                 </div>
-
-              {/* Testimonial */}
               <p className="text-gray-500 leading-relaxed">
                 {t.text}
               </p>
