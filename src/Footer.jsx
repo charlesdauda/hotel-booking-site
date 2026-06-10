@@ -122,14 +122,21 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* ===== Bottom bar ===== */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-gray-400">
-          <p className="text-center md:text-left">© Copyright {new Date().getFullYear()} Sheraton Hotel & Suites. All rights reserved.</p>
-          <div className="flex gap-3">
-            <a href="#" className="hover:text-[#bf9b6a] transition-colors">Help</a>
-            <span>/</span>
-            <a href="#" className="hover:text-[#bf9b6a] transition-colors">Support</a>
-          </div>
+        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col items-center gap-2 text-sm text-gray-400">
+          <p>© Copyright {new Date().getFullYear()} Sheraton Hotel &amp; Suites. All rights reserved.</p>
+          <p>
+            Developed by{' '}
+            <a
+              href="https://github.com/charlesdauda"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#bf9b6a] hover:text-white transition-colors"
+            >
+              codewithcharles
+            </a>
+          </p>
         </div>
       </div>
     </footer>
