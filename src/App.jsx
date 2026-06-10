@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import GalleryPage from './pages/GalleryPage';
 import RoomsSuitesPage from './pages/RoomsSuitesPage';
+import ContactPage from './pages/ContactPage';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/rooms-suites" element={<RoomsSuitesPage />} />
       </Routes>
+      <ContactPage />
       <Footer />
     </BrowserRouter>
   );
