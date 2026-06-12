@@ -24,10 +24,10 @@
 - [x] Import footer
 
 ## Gallery Page
-- [] Gallery page with images
-- [] Import Footer
+- [x] Gallery page with images
+- [x] Import Footer
 
 ## Rooms Page
-- [] Room page with images and details
-- [] Images of other facilities
-- [] import footer
+- [x] Room page with images and details
+- [x] Images of other facilities
+- [x] import footer

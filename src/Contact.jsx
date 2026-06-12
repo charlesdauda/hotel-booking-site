@@ -6,8 +6,8 @@ const today = new Date().toISOString().split('T')[0];
 const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
 
 const contactItems = [
-  { icon: FaPhoneAlt,     title: 'Have any question?', detail: '+233 123 456 7890' },
-  { icon: FaEnvelope,     title: 'Write email',        detail: 'needhelp@vacationhouses.com' },
+  { icon: FaPhoneAlt,     title: 'Have any question?', detail: '+233 546 627 2444' },
+  { icon: FaEnvelope,     title: 'Write email',        detail: 'charlesdauda676@gmail.com' },
   { icon: FaMapMarkerAlt, title: 'Visit anytime',      detail: 'McCarthy Hills, Accra, Ghana' },
 ];
 
