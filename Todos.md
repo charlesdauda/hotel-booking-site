@@ -31,3 +31,12 @@
 - [x] Room page with images and details
 - [x] Images of other facilities
 - [x] import footer
+
+
+## BACKEND DEV
+- [] Book Room
+- [] Add to cart
+- [] Database 
+- [] CRUD 
+- [] Forms to check if there is room available
+

@@ -7,7 +7,6 @@ import FeaturedRooms from '../FeaturedRooms';
 import Hospitality from '../Hospitality';
 import Stats from '../Stats';
 import Testimonials from '../Testimonials';
-import Partners from '../Partners';
 
 const Home = () => {
   return (
@@ -21,7 +20,6 @@ const Home = () => {
       <Hospitality />
       <Stats />
       <Testimonials />
-      <Partners />
     </>
   );
 };
