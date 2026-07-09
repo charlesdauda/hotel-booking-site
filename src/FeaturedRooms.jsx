@@ -50,7 +50,7 @@ const FeaturedRooms = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="group/btn relative overflow-hidden bg-black text-white text-xs tracking-[0.25em] font-semibold px-10 py-4">
+                <button className="group/btn relative overflow-hidden border rounded-sm bg-black text-white text-xs tracking-[0.25em] font-semibold px-10 py-4">
                   <span className="absolute inset-0 bg-[#bf9b6a] -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500 ease-out" />
                   <span className="relative z-10">BOOK NOW</span>
                 </button>

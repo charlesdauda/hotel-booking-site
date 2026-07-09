@@ -54,7 +54,7 @@ const RoomsSuitesPage = () => {
               />
             </div>
 
-            <div className={`bg-[#f5ede0] p-10 lg:p-16 relative flex flex-col justify-center ${imageLeft ? '' : 'lg:order-1'}`}>
+            <div className={` p-10 lg:p-16 relative flex flex-col justify-center ${imageLeft ? '' : 'lg:order-1'}`}>
                 
               <span className="absolute top-0 left-10 lg:left-16 w-20 h-1.5 bg-[#bf9b6a]" />
 
@@ -75,10 +75,6 @@ const RoomsSuitesPage = () => {
                 <p className="text-gray-500 leading-relaxed mb-8 max-w-md">
                   {feature.description}
                 </p>
-
-                <button className="self-start border-2 border-[#bf9b6a] text-[#bf9b6a] hover:bg-[#bf9b6a] hover:text-white px-8 py-3 text-xs tracking-[0.2em] font-semibold transition-colors">
-                  DISCOVER MORE
-                </button>
               </div>
             </div>
           </section>

@@ -46,9 +46,7 @@ const NavBar = () => {
 
           {/* Right side: button + cart */}
           <div className="flex items-center gap-4">
-            <button className="hidden md:block bg-[#bf9b6a] hover:bg-[#a8895d] text-white text-sm font-semibold px-6 py-3 tracking-wide transition-colors border rounded-sm">
-              RESERVE ROOM
-            </button>
+
 
             <div className="relative">
               <IoBedSharp className="text-xl text-gray-700" />

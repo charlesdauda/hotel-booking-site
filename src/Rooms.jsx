@@ -66,7 +66,7 @@ const Rooms = () => {
                 <div className={`absolute inset-x-0 bottom-0 px-6 lg:px-8 pb-6 lg:pb-7 flex items-center justify-between transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                   <button
                     onClick={(e) => e.stopPropagation()}
-                    className="border border-white/80 text-white text-[11px] tracking-[0.2em] px-6 py-3 hover:bg-[#bf9b6a] hover:border-[#bf9b6a] transition-colors"
+                    className="border border-white/80 rounded-sm text-white text-[11px] tracking-[0.2em] px-6 py-3 hover:bg-[#bf9b6a] hover:border-[#bf9b6a] transition-colors"
                   >
                     BOOK NOW
                   </button>
