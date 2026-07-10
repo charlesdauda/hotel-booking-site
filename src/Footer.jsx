@@ -42,7 +42,7 @@ const Footer = () => {
               className="h-14 w-auto mb-6 brightness-0 invert"
             />
             <p className="text-gray-400 leading-relaxed mb-6">
-              Vacation Houses is a luxury hospitality brand dedicated to crafting unforgettable stays where every room, meal, and moment is designed around you.
+             Sheraton Hotel & Resort is a luxury hospitality brand dedicated to crafting unforgettable stays where every room, meal, and moment is designed around you.
             </p>
             <div className="flex gap-3">
               {socials.map((social, i) => {
