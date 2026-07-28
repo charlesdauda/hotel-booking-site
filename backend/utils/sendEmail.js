@@ -1,12 +1,6 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+const getResend = () => new Resend(process.env.RESEND_API_KEY);
 
 const formatDate = (date) =>
   new Date(date).toLocaleDateString('en-US', {
@@ -109,12 +103,17 @@ const buildReceiptHtml = ({ orderId, guestName, bookings }) => {
 };
 
 export const sendBookingConfirmation = async ({ orderId, guestName, email, bookings }) => {
+  const resend = getResend();
   const html = buildReceiptHtml({ orderId, guestName, bookings });
 
-  await transporter.sendMail({
-    from: `"Sheraton Hotel & Resort" <${process.env.EMAIL_USER}>`,
+  const { error } = await resend.emails.send({
+    from: 'Sheraton Hotel & Resort <onboarding@resend.dev>',
     to: email,
     subject: `Booking Confirmation — Order #${orderId.slice(0, 8).toUpperCase()}`,
     html,
   });
+
+  if (error) {
+    throw new Error(error.message || 'Failed to send email via Resend.');
+  }
 };

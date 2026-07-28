@@ -1,12 +1,13 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import bookingRoutes from './routes/bookingRoutes.js';
 import roomRoutes from './routes/roomRoutes.js';
 import { notFound, errorHandler } from './middleware/errorHandler.js';
 
-dotenv.config();
 connectDB();
 
 const app = express();
