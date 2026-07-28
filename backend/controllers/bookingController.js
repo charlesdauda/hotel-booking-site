@@ -2,6 +2,7 @@ import crypto from 'crypto';
 import mongoose from 'mongoose';
 import Room from '../models/Room.js';
 import Booking from '../models/Booking.js';
+import { sendBookingConfirmation } from '../utils/sendEmail.js';
 
 const ALLOWED_STATUSES = ['pending', 'confirmed', 'cancelled'];
 
@@ -89,6 +90,32 @@ export const createBookings = async (req, res) => {
     }
 
     const bookings = await Booking.insertMany(docsToInsert);
+
+    // Group bookings by email in case a checkout contains bookings for
+    // different guests, so each guest gets one email listing only their
+    // own room(s) rather than everyone else's.
+    const byEmail = bookings.reduce((acc, b) => {
+      if (!acc[b.email]) acc[b.email] = { guestName: b.guestName, bookings: [] };
+      acc[b.email].bookings.push(b);
+      return acc;
+    }, {});
+
+    // Fire off confirmation emails. A failed email should never block or
+    // fail the booking response — the booking is already saved in the DB,
+    // so we just log the error and continue.
+    for (const [email, data] of Object.entries(byEmail)) {
+      try {
+        await sendBookingConfirmation({
+          orderId,
+          guestName: data.guestName,
+          email,
+          bookings: data.bookings,
+        });
+      } catch (emailErr) {
+        console.error(`Failed to send confirmation email to ${email}:`, emailErr.message);
+      }
+    }
+
     res.status(201).json({ message: 'Booking confirmed', orderId, bookings });
   } catch (err) {
     res.status(500).json({ message: 'Could not create booking.', error: err.message });
