@@ -1,6 +1,16 @@
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
-const getResend = () => new Resend(process.env.RESEND_API_KEY);
+// Created lazily, not at import time, so it always picks up the current
+// env vars regardless of when this module gets imported relative to
+// dotenv.config() running.
+const getTransporter = () =>
+  nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
 
 const formatDate = (date) =>
   new Date(date).toLocaleDateString('en-US', {
@@ -103,17 +113,13 @@ const buildReceiptHtml = ({ orderId, guestName, bookings }) => {
 };
 
 export const sendBookingConfirmation = async ({ orderId, guestName, email, bookings }) => {
-  const resend = getResend();
+  const transporter = getTransporter();
   const html = buildReceiptHtml({ orderId, guestName, bookings });
 
-  const { error } = await resend.emails.send({
-    from: 'Sheraton Hotel & Resort <onboarding@resend.dev>',
+  await transporter.sendMail({
+    from: `"Sheraton Hotel & Resort" <${process.env.EMAIL_USER}>`,
     to: email,
     subject: `Booking Confirmation — Order #${orderId.slice(0, 8).toUpperCase()}`,
     html,
   });
-
-  if (error) {
-    throw new Error(error.message || 'Failed to send email via Resend.');
-  }
 };
