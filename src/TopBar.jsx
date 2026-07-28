@@ -5,7 +5,6 @@ import { FaInstagram, FaTiktok } from 'react-icons/fa6';
 import { FaLinkedinIn, FaTwitter,} from 'react-icons/fa';
 
 const contactItems = [
-  { icon: <MdOutlineEmail />, text: 'charlesdauda676@gmail.com' },
   { icon: <IoLocationSharp />, text: 'McCarthy Hills, Accra' },
   { icon: <FaRegClock />, text: 'Sunday - Friday: 9.am - 8pm' },
 ];

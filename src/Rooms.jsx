@@ -4,6 +4,7 @@ import room2 from './assets/Images/room2.jpg';
 import room3 from './assets/Images/room3.jpg';
 import room4 from './assets/Images/room4.jpg';
 import { FaUserFriends, FaBed, FaBath, FaWifi, FaTv } from 'react-icons/fa';
+import BookingModal from './BookingModal';
 
 const rooms = [
   { image: room1, name: 'Luxury Suite Room',   price: 90 },
@@ -16,6 +17,7 @@ const amenities = [FaUserFriends, FaBed, FaBath, FaWifi, FaTv];
 
 const Rooms = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [bookingRoom, setBookingRoom] = useState(null);
 
   return (
     <section className="bg-[#f6f2ea] py-20 md:py-28">
@@ -65,7 +67,10 @@ const Rooms = () => {
 
                 <div className={`absolute inset-x-0 bottom-0 px-6 lg:px-8 pb-6 lg:pb-7 flex items-center justify-between transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                   <button
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setBookingRoom(room);
+                    }}
                     className="border border-white/80 rounded-sm text-white text-[11px] tracking-[0.2em] px-6 py-3 hover:bg-[#bf9b6a] hover:border-[#bf9b6a] transition-colors"
                   >
                     BOOK NOW
@@ -82,6 +87,10 @@ const Rooms = () => {
         </div>
 
       </div>
+
+      {bookingRoom && (
+        <BookingModal room={bookingRoom} onClose={() => setBookingRoom(null)} />
+      )}
     </section>
   );
 };

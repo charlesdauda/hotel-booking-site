@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import featured1 from './assets/Images/featured1.jpg';
 import featured2 from './assets/Images/featured2.jpg';
 import { FaCheck } from 'react-icons/fa';
+import BookingModal from './BookingModal';
 
 const amenities = ['Pick & Drop Service', 'Swimming Pool', 'City Tour Guide', 'Fibre Internet'];
 
@@ -10,6 +12,8 @@ const rooms = [
 ];
 
 const FeaturedRooms = () => {
+  const [activeRoom, setActiveRoom] = useState(null);
+
   return (
     <section className="bg-white py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6">
@@ -30,7 +34,7 @@ const FeaturedRooms = () => {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12">
           {rooms.map((room, i) => (
             <div key={i} className="grid grid-cols-12 items-center">
-              
+
               <div className="bg-[#f5ede0] p-8 lg:p-10 col-span-12 lg:col-span-5 relative z-10 shadow-md">
 
                 <span className="absolute top-0 left-8 w-16 h-1.5 bg-[#bf9b6a]" />
@@ -50,7 +54,10 @@ const FeaturedRooms = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="group/btn relative overflow-hidden border rounded-sm bg-black text-white text-xs tracking-[0.25em] font-semibold px-10 py-4">
+                <button
+                  onClick={() => setActiveRoom(room)}
+                  className="group/btn relative overflow-hidden border rounded-sm bg-black text-white text-xs tracking-[0.25em] font-semibold px-10 py-4"
+                >
                   <span className="absolute inset-0 bg-[#bf9b6a] -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500 ease-out" />
                   <span className="relative z-10">BOOK NOW</span>
                 </button>
@@ -75,6 +82,10 @@ const FeaturedRooms = () => {
         </div>
 
       </div>
+
+      {activeRoom && (
+        <BookingModal room={activeRoom} onClose={() => setActiveRoom(null)} />
+      )}
     </section>
   );
 };
