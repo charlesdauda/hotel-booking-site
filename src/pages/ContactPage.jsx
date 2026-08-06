@@ -1,6 +1,6 @@
-import PageHeader from '../PageHeader';
-import Contact from '../Contact';
-import Map from '../Map';
+import PageHeader from '../components/PageHeader';
+import Contact from '../components/Contact';
+import Map from '../components/Map';
 import hero1 from '../assets/Images/hero1.jpg';
 
 const ContactPage = () => {

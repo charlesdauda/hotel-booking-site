@@ -1,8 +1,8 @@
-import PageHeader from '../PageHeader';
-import About from '../About';
-import Rooms from '../Rooms';
-import Promo from '../Promo';
-import Services from '../Services';
+import PageHeader from '../components/PageHeader';
+import About from '../components/About';
+import Rooms from '../components/Rooms';
+import Promo from '../components/Promo';
+import Services from '../components/Services';
 import hero1 from '../assets/Images/hero1.jpg';
 
 const AboutPage = () => {

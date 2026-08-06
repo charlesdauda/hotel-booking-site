@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaPlay, FaTimes } from 'react-icons/fa';
-import promoBg from './assets/Images/promo.jpg';
+import promoBg from '../assets/Images/promo.jpg';
 
 const YOUTUBE_ID = 'dQw4w9WgXcQ';
 

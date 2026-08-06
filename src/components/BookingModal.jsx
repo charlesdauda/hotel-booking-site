@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { HiX } from 'react-icons/hi';
-import { useBooking } from "./context/useBooking";
+import { useBooking } from "../context/useBooking";
 
 // room: { name, price, image }
 // onClose: called to dismiss the modal

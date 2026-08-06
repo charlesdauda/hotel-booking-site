@@ -1,5 +1,5 @@
-import about1 from './assets/Images/about1.jpg';
-import about2 from './assets/Images/about2.jpg';
+import about1 from '../assets/Images/about1.jpg';
+import about2 from '../assets/Images/about2.jpg';
 import { FaBed, FaSwimmingPool, FaPhoneVolume, FaPlay, FaRegLightbulb } from 'react-icons/fa';
 
 const About = () => {

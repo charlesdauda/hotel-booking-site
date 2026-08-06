@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import featured1 from './assets/Images/featured1.jpg';
-import featured2 from './assets/Images/featured2.jpg';
+import featured1 from '../assets/Images/featured1.jpg';
+import featured2 from '../assets/Images/featured2.jpg';
 import { FaCheck } from 'react-icons/fa';
 import BookingModal from './BookingModal';
 

@@ -1,14 +1,16 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ScrollToTop from './ScrollToTop';
-import TopBar from './TopBar';
-import NavBar from './NavBar';
-import Footer from './Footer';
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import GalleryPage from './pages/GalleryPage';
 import RoomsSuitesPage from './pages/RoomsSuitesPage';
 import ContactPage from './pages/ContactPage';
 import { BookingProvider } from './context/BookingProvider';
+import TopBar from './components/TopBar';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop';
+
+
 
 const App = () => {
   return (

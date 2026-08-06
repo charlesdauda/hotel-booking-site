@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import { checkAvailability } from './api/bookingApi';
+import { checkAvailability } from '../api/bookingApi';
 import BookingModal from './BookingModal';
 
 // Default dates: today and tomorrow

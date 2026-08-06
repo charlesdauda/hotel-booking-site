@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import hotelLogo from './assets/Images/hotelLogo.png';
+import hotelLogo from '../assets/Images/hotelLogo.png';
 import { IoBedSharp } from "react-icons/io5";
 import { HiMenuAlt3, HiX, HiTrash } from 'react-icons/hi';
-import { useBooking } from './context/useBooking';
-import { submitBookings } from './api/bookingApi';
+import { useBooking } from '../context/useBooking';
+import { submitBookings } from '../api/bookingApi';
 
 const navLinks = [
   { name: 'Home',        link: '/' },

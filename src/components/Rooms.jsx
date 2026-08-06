@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import room1 from './assets/Images/room1.jpg';
-import room2 from './assets/Images/room2.jpg';
-import room3 from './assets/Images/room3.jpg';
-import room4 from './assets/Images/room4.jpg';
+import room1 from '../assets/Images/room1.jpg';
+import room2 from '../assets/Images/room2.jpg';
+import room3 from '../assets/Images/room3.jpg';
+import room4 from '../assets/Images/room4.jpg';
 import { FaUserFriends, FaBed, FaBath, FaWifi, FaTv } from 'react-icons/fa';
 import BookingModal from './BookingModal';
 

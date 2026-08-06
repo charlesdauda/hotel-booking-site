@@ -1,7 +1,7 @@
 import { FaCheck, FaQuoteLeft } from 'react-icons/fa';
-import hospImage from './assets/Images/hospitality.jpg';
-import hospThumb1 from './assets/Images/hospThumb1.jpg';
-import hospThumb2 from './assets/Images/hospThumb2.jpg';
+import hospImage from '../assets/Images/hospitality.jpg';
+import hospThumb1 from '../assets/Images/hospThumb1.jpg';
+import hospThumb2 from '../assets/Images/hospThumb2.jpg';
 
 const hotelFacilities = ['Healthy Food', 'Award-winning Restaurant', 'Individually Styled Bedrooms'];
 const luxuryRooms     = ['Healthy Food', 'Award-winning Restaurant', 'Individually Styled Bedrooms'];

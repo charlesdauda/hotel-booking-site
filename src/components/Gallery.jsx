@@ -1,12 +1,12 @@
-import room1 from './assets/Images/room1.jpg';
-import room2 from './assets/Images/room2.jpg';
-import room3 from './assets/Images/room3.jpg';
-import room4 from './assets/Images/room4.jpg';
-import featured1 from './assets/Images/featured1.jpg';
-import featured2 from './assets/Images/featured2.jpg';
-import hospThumb1 from './assets/Images/hospThumb1.jpg';
-import hospThumb2 from './assets/Images/hospThumb2.jpg';
-import hospitality from './assets/Images/hospitality.jpg';
+import room1 from '../assets/Images/room1.jpg';
+import room2 from '../assets/Images/room2.jpg';
+import room3 from '../assets/Images/room3.jpg';
+import room4 from '../assets/Images/room4.jpg';
+import featured1 from '../assets/Images/featured1.jpg';
+import featured2 from '../assets/Images/featured2.jpg';
+import hospThumb1 from '../assets/Images/hospThumb1.jpg';
+import hospThumb2 from '../assets/Images/hospThumb2.jpg';
+import hospitality from '../assets/Images/hospitality.jpg';
 
 const galleryImages = [
   room1, room2, room3,

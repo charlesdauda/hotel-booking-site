@@ -113,6 +113,10 @@ const buildReceiptHtml = ({ orderId, guestName, bookings }) => {
 };
 
 export const sendBookingConfirmation = async ({ orderId, guestName, email, bookings }) => {
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    throw new Error('Email credentials are not configured.');
+  }
+
   const transporter = getTransporter();
   const html = buildReceiptHtml({ orderId, guestName, bookings });
 

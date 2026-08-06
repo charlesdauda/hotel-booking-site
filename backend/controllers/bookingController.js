@@ -19,6 +19,12 @@ const isValidObjectId = (id) => mongoose.Types.ObjectId.isValid(id);
 // Creates one or more bookings at once (a full cart checkout)
 export const createBookings = async (req, res) => {
   try {
+    if (mongoose.connection.readyState !== 1) {
+      return res.status(503).json({
+        message: 'Database is currently unavailable. Please try again in a moment.',
+      });
+    }
+
     const { items } = req.body;
 
     if (!Array.isArray(items) || items.length === 0) {

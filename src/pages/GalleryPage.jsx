@@ -1,6 +1,6 @@
-import PageHeader from '../PageHeader';
-import Gallery from '../Gallery';
-import Footer from '../Footer';
+import PageHeader from '../components/PageHeader';
+import Gallery from '../components/Gallery';
+import Footer from '../components/Footer';
 import hero1 from '../assets/Images/hero1.jpg';
 
 const GalleryPage = () => {

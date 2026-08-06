@@ -1,4 +1,4 @@
-import PageHeader from '../PageHeader';
+import PageHeader from '../components/PageHeader';
 import hero1 from '../assets/Images/hero1.jpg';
 import fitness from '../assets/Images/fitness.jpg';
 import restaurant from '../assets/Images/restaurant.jpg';

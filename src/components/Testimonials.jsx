@@ -1,7 +1,7 @@
 import { FaCheck } from 'react-icons/fa';
-import testi1 from './assets/Images/testi1.jpg';
-import testi2 from './assets/Images/testi2.jpg';
-import testi3 from './assets/Images/testi3.jpg';
+import testi1 from '../assets/Images/testi1.jpg';
+import testi2 from '../assets/Images/testi2.jpg';
+import testi3 from '../assets/Images/testi3.jpg';
 
 const testimonials = [
   {
