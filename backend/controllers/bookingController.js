@@ -6,8 +6,6 @@ import { sendBookingConfirmation } from '../utils/sendEmail.js';
 
 const ALLOWED_STATUSES = ['pending', 'confirmed', 'cancelled'];
 
-// Which status changes are allowed. Cancelled is final; confirmed can
-// only move to cancelled, not back to pending.
 const ALLOWED_TRANSITIONS = {
   pending: ['confirmed', 'cancelled'],
   confirmed: ['cancelled'],
@@ -16,7 +14,6 @@ const ALLOWED_TRANSITIONS = {
 
 const isValidObjectId = (id) => mongoose.Types.ObjectId.isValid(id);
 
-// Creates one or more bookings at once (a full cart checkout)
 export const createBookings = async (req, res) => {
   try {
     if (mongoose.connection.readyState !== 1) {
@@ -31,8 +28,6 @@ export const createBookings = async (req, res) => {
       return res.status(400).json({ message: 'No booking items were provided.' });
     }
 
-    // Shared id linking every room from this checkout together, so a
-    // multi-room booking can be looked up or managed as one order.
     const orderId = crypto.randomUUID();
     const docsToInsert = [];
 
@@ -56,9 +51,6 @@ export const createBookings = async (req, res) => {
 
       const quantity = item.quantity && item.quantity > 0 ? item.quantity : 1;
 
-      // Re-check availability at write time. The client may have called
-      // /check-availability a while ago (or skipped it entirely), so this
-      // is the check that actually protects against overbooking.
       const overlapping = await Booking.find({
         roomName: room.name,
         status: { $ne: 'cancelled' },
@@ -79,8 +71,6 @@ export const createBookings = async (req, res) => {
       docsToInsert.push({
         orderId,
         roomName: room.name,
-        // Price is always computed from the Room record — never trusted
-        // from the client — so a request can't set its own price.
         pricePerNight: room.pricePerNight,
         nights,
         totalPrice: room.pricePerNight * nights * quantity,
@@ -97,18 +87,13 @@ export const createBookings = async (req, res) => {
 
     const bookings = await Booking.insertMany(docsToInsert);
 
-    // Group bookings by email in case a checkout contains bookings for
-    // different guests, so each guest gets one email listing only their
-    // own room(s) rather than everyone else's.
     const byEmail = bookings.reduce((acc, b) => {
       if (!acc[b.email]) acc[b.email] = { guestName: b.guestName, bookings: [] };
       acc[b.email].bookings.push(b);
       return acc;
     }, {});
 
-    // Fire off confirmation emails. A failed email should never block or
-    // fail the booking response — the booking is already saved in the DB,
-    // so we just log the error and continue.
+
     for (const [email, data] of Object.entries(byEmail)) {
       try {
         await sendBookingConfirmation({

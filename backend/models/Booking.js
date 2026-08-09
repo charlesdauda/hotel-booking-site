@@ -2,7 +2,6 @@ import mongoose from 'mongoose';
 
 const bookingSchema = new mongoose.Schema(
   {
-    // Groups every room booked in the same checkout together.
     orderId: { type: String, required: true, index: true },
     roomName: { type: String, required: true },
     pricePerNight: { type: Number, required: true },
@@ -29,8 +28,6 @@ const bookingSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Speeds up the overlap lookups used by check-availability and by
-// createBookings' own re-validation on every write.
 bookingSchema.index({ roomName: 1, checkIn: 1, checkOut: 1 });
 
 export default mongoose.model('Booking', bookingSchema);
