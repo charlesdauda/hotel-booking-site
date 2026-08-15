@@ -34,9 +34,9 @@
 
 
 ## BACKEND DEV
-- [] Book Room
-- [] Add to cart
+- [x] Book Room
+- [x] Add to cart
 - [] Database 
-- [] CRUD 
-- [] Forms to check if there is room available
+- [x] CRUD 
+- [x] Forms to check if there is room available
 

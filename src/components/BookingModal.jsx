@@ -80,9 +80,9 @@ const BookingModal = ({ room, onClose, initialValues = {} }) => {
     <>
       <div
         onClick={onClose}
-        className="fixed inset-0 z-[60] bg-black/50 transition-opacity duration-200"
+        className="fixed inset-0 z-60 bg-black/50 transition-opacity duration-200"
       />
-      <div className="fixed inset-0 z-[70] flex items-center justify-center px-4">
+      <div className="fixed inset-0 z-70 flex items-center justify-center px-4">
         <div className="bg-white w-full max-w-lg shadow-2xl relative max-h-[90vh] overflow-y-auto">
           <button
             onClick={onClose}

@@ -65,7 +65,6 @@ const NavBar = () => {
             ))}
           </ul>
 
-          {/* Right side: button + cart */}
           <div className="flex items-center gap-4">
 
             <button
@@ -75,14 +74,13 @@ const NavBar = () => {
             >
               <IoBedSharp className="text-xl text-gray-700" />
               <span
-                className={`absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 rounded-full text-[10px] font-bold flex items-center justify-center transition-colors
+                className={`absolute -top-1.5 -right-1.5 min-w-4.5 h-4.5 px-1 rounded-full text-[10px] font-bold flex items-center justify-center transition-colors
                 ${cartCount > 0 ? 'bg-[#bf9b6a] text-white' : 'bg-gray-200 text-gray-500'}`}
               >
                 {cartCount}
               </span>
             </button>
 
-            {/* Mobile menu toggle */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="md:hidden text-2xl text-gray-800"
@@ -95,7 +93,6 @@ const NavBar = () => {
         </div>
       </nav>
 
-      {/* Mobile menu */}
       <div
         className={`md:hidden fixed top-20 left-0 right-0 bottom-0 z-30 bg-white transition-opacity duration-300 ${
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
@@ -116,8 +113,6 @@ const NavBar = () => {
         </ul>
       </div>
 
-      {/* Bed bookings sidebar */}
-      {/* Backdrop */}
       <div
         onClick={() => setCartOpen(false)}
         className={`fixed inset-0 z-50 bg-black/40 transition-opacity duration-200 ${
@@ -125,13 +120,12 @@ const NavBar = () => {
         }`}
       />
 
-      {/* Panel */}
       <div
         className={`fixed top-0 right-0 z-50 h-full w-full max-w-sm bg-white shadow-2xl
         transform transition-transform duration-200 ease-out
         ${cartOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
-        {/* Header */}
+
         <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
           <div className="flex items-center gap-2">
             <IoBedSharp className="text-xl text-[#0f2c3f]" />
@@ -147,7 +141,6 @@ const NavBar = () => {
         </div>
 
         {confirmed ? (
-          /* Confirmation state, shown right after a successful checkout */
           <div className="flex flex-col items-center justify-center text-center px-8 h-[calc(100%-88px)]">
             <div className="w-24 h-24 rounded-full bg-[#f5ede0] flex items-center justify-center mb-6">
               <span className="text-[#bf9b6a] text-4xl">✓</span>
@@ -165,7 +158,6 @@ const NavBar = () => {
             </Link>
           </div>
         ) : cartItems.length === 0 ? (
-          /* Empty state */
           <div className="flex flex-col items-center justify-center text-center px-8 h-[calc(100%-88px)]">
             <div className="w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center mb-6">
               <IoBedSharp className="text-4xl text-gray-400" />
@@ -185,7 +177,6 @@ const NavBar = () => {
             </Link>
           </div>
         ) : (
-          /* Cart contents */
           <div className="flex flex-col h-[calc(100%-88px)]">
             <div className="flex-1 overflow-y-auto px-6 py-5 space-y-4">
               {cartItems.map((item) => (

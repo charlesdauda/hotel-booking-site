@@ -24,8 +24,7 @@ const Promo = () => {
           src={promoBg}
           alt=""
           className="absolute inset-0 w-full h-full object-cover"  />
-
-        {/* Dark overlay */}
+          
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 h-full grid lg:grid-cols-2 gap-12 items-center">
           <div>
