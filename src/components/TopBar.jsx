@@ -10,10 +10,10 @@ const contactItems = [
 ];
 
 const socialLinks = [
-    {icon: <FaInstagram />, href: '#', label: 'Instagram'},
-    {icon: <FaTiktok />, href: '#', label: 'TikTok'},
-    {icon: <FaLinkedinIn />, href: '#', label: 'LinkedIn'},
-    {icon: <FaTwitter />, href: '#', label: 'Twitter'},
+    {icon: <FaInstagram />, href: 'https://www.instagram.com', label: 'Instagram'},
+    {icon: <FaTiktok />, href: 'https://www.tiktok.com', label: 'TikTok'},
+    {icon: <FaLinkedinIn />, href: 'https://www.linkedin.com', label: 'LinkedIn'},
+    {icon: <FaTwitter />, href: 'https://www.x.com', label: 'Twitter'},
 ];
 
 const TopBar = () => {

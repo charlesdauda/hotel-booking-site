@@ -49,7 +49,7 @@ const About = () => {
         </div>
 
         <div>
-          {/* Eyebrow */}
+          
           <div className="flex items-center gap-3 mb-5">
             <span className="text-[#bf9b6a] text-sm font-semibold tracking-[0.3em] uppercase">
               Sheraton Hotel & Resort

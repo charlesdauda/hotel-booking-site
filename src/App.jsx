@@ -11,7 +11,6 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop';
 
 
-
 const App = () => {
   return (
     <BookingProvider>

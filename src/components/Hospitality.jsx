@@ -77,7 +77,6 @@ const Hospitality = () => {
             </div>
           </div>
 
-          {/* Thumbnails — each with shine + zoom */}
           <div className="grid grid-cols-2 gap-4">
             <div className="group relative overflow-hidden">
               <img

@@ -27,7 +27,6 @@ const Services = () => {
           </h2>
         </div>
 
-
         <div className="grid md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => {
             const Icon = service.icon;
@@ -43,7 +42,6 @@ const Services = () => {
                 <h3 className="font-serif text-2xl text-gray-900 mb-4 group-hover:text-white transition-colors duration-500">
                   {service.title}
                 </h3>
-
                 <p className="text-gray-500 leading-relaxed group-hover:text-white/80 transition-colors duration-500">
                   {service.desc}
                 </p>

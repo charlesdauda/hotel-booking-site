@@ -25,7 +25,6 @@ export const checkAvailability = async (req, res) => {
       return res.status(400).json({ message: 'Check-out must be after check-in.' });
     }
 
-    // A booking overlaps this range if it starts before our end and ends after our start
     const overlapFilter = {
       status: { $ne: 'cancelled' },
       checkIn: { $lt: end },

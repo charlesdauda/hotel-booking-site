@@ -3,7 +3,6 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { checkAvailability } from '../api/bookingApi';
 import BookingModal from './BookingModal';
 
-// Default dates: today and tomorrow
 const today = new Date().toISOString().split('T')[0];
 const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
 

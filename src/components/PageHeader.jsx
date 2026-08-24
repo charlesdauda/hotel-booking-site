@@ -10,8 +10,6 @@ const PageHeader = ({ title, bgImage }) => {
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black/70" />
-
-      {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-none">
           {title}

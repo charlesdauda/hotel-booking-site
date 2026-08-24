@@ -32,7 +32,7 @@ const Hero = () => {
 
   return (
     <section className="relative mt-20 md:mt-31 h-[calc(100vh-80px)] md:h-[calc(100vh-124px)] min-h-160 w-full overflow-hidden bg-black">
-      {/* Background slides with Ken Burns zoom */}
+
       {slides.map((slide, i) => (
         <div
           key={i}
@@ -51,7 +51,6 @@ const Hero = () => {
         </div>
       ))}
 
-      {/* Content layer */}
       <div className="relative z-10 h-full">
         {slides.map((slide, i) => {
           const active = i === current;
@@ -90,7 +89,6 @@ const Hero = () => {
         })}
       </div>
 
-      {/* Slide indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
         {slides.map((_, i) => (
           <button

@@ -1,8 +1,5 @@
 import nodemailer from 'nodemailer';
 
-// Created lazily, not at import time, so it always picks up the current
-// env vars regardless of when this module gets imported relative to
-// dotenv.config() running.
 const getTransporter = () =>
   nodemailer.createTransport({
     service: 'gmail',

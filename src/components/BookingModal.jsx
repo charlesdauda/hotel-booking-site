@@ -2,10 +2,6 @@ import { useState } from 'react';
 import { HiX } from 'react-icons/hi';
 import { useBooking } from "../context/useBooking";
 
-// room: { name, price, image }
-// onClose: called to dismiss the modal
-// initialValues: optional { checkIn, checkOut, guests, quantity } to pre-fill,
-// e.g. when arriving from the Contact page's availability search
 const BookingModal = ({ room, onClose, initialValues = {} }) => {
   const { addBooking } = useBooking();
   const today = new Date().toISOString().split('T')[0];
