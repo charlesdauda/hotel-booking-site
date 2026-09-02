@@ -95,19 +95,24 @@ export const createBookings = async (req, res) => {
 
 
     for (const [email, data] of Object.entries(byEmail)) {
-      try {
-        await sendBookingConfirmation({
+      void sendBookingConfirmation({
           orderId,
           guestName: data.guestName,
           email,
           bookings: data.bookings,
+        })
+        .then(() => console.log(`Booking confirmation email sent to ${email}`))
+        .catch((emailErr) => {
+          console.error(`Failed to send confirmation email to ${email}:`, emailErr.message);
         });
-      } catch (emailErr) {
-        console.error(`Failed to send confirmation email to ${email}:`, emailErr.message);
-      }
     }
 
-    res.status(201).json({ message: 'Booking confirmed', orderId, bookings });
+    res.status(201).json({
+      message: 'Booking confirmed',
+      orderId,
+      bookings,
+      emailQueued: Object.keys(byEmail).length > 0,
+    });
   } catch (err) {
     res.status(500).json({ message: 'Could not create booking.', error: err.message });
   }
