@@ -2,6 +2,8 @@ import nodemailer from 'nodemailer';
 
 let transporter;
 
+const useResend = process.env.EMAIL_PROVIDER === 'resend';
+
 const getTransporter = () => {
   if (!transporter) {
     transporter = nodemailer.createTransport({
@@ -24,8 +26,16 @@ const getTransporter = () => {
 };
 
 export const verifyEmailConfiguration = async () => {
+  if (useResend) {
+    if (!process.env.RESEND_API_KEY || !process.env.EMAIL_FROM) {
+      throw new Error('Resend is not configured. Set RESEND_API_KEY and EMAIL_FROM.');
+    }
+
+    return;
+  }
+
   if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-    throw new Error('Email credentials are not configured.');
+    throw new Error('Gmail credentials are not configured.');
   }
 
   await getTransporter().verify();
@@ -132,12 +142,40 @@ const buildReceiptHtml = ({ orderId, guestName, bookings }) => {
 };
 
 export const sendBookingConfirmation = async ({ orderId, guestName, email, bookings }) => {
+  const html = buildReceiptHtml({ orderId, guestName, bookings });
+
+  if (useResend) {
+    if (!process.env.RESEND_API_KEY || !process.env.EMAIL_FROM) {
+      throw new Error('Resend is not configured. Set RESEND_API_KEY and EMAIL_FROM.');
+    }
+
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: process.env.EMAIL_FROM,
+        to: [email],
+        subject: `Booking Confirmation — Order #${orderId.slice(0, 8).toUpperCase()}`,
+        html,
+      }),
+    });
+
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(result.message || `Resend returned HTTP ${response.status}.`);
+    }
+
+    return result.id;
+  }
+
   if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-    throw new Error('Email credentials are not configured.');
+    throw new Error('Gmail credentials are not configured.');
   }
 
   const mailTransporter = getTransporter();
-  const html = buildReceiptHtml({ orderId, guestName, bookings });
 
   const result = await mailTransporter.sendMail({
     from: `"Sheraton Hotel & Resort" <${process.env.EMAIL_USER}>`,

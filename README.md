@@ -68,6 +68,16 @@ EMAIL_USER=your-sender@example.com
 EMAIL_PASS=your-email-app-password
 ```
 
+Render cannot reliably reach Gmail SMTP from every region. For production email, use an HTTPS provider such as Resend:
+
+```env
+EMAIL_PROVIDER=resend
+RESEND_API_KEY=re_your_api_key
+EMAIL_FROM=Hotel Booking <bookings@your-verified-domain.com>
+```
+
+Keep `EMAIL_USER` and `EMAIL_PASS` for local Gmail testing if needed. Resend requires a verified sending domain; its test sender is limited to the Resend account email.
+
 The backend defaults to `mongodb://127.0.0.1:27017/hotel-booking` during local development if `MONGODB_LOCAL_URI` is not set. Production requires `MONGODB_URI`.
 
 Set `CLIENT_URLS` in Render to `https://hotel-booking-site-nu-brown.vercel.app`. Multiple origins can be separated with commas. Do not include a trailing slash.
