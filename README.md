@@ -60,7 +60,8 @@ MONGODB_LOCAL_URI=mongodb://127.0.0.1:27017/hotel-booking
 # Production uses this URI when NODE_ENV=production.
 MONGODB_URI=mongodb+srv://<user>:<password>@<cluster>/<database>
 
-CLIENT_URL=http://localhost:5173
+# Comma-separated browser origins allowed to call the API.
+CLIENT_URLS=http://localhost:5173
 PORT=5000
 ADMIN_API_KEY=replace-with-a-long-random-key
 EMAIL_USER=your-sender@example.com
@@ -68,6 +69,8 @@ EMAIL_PASS=your-email-app-password
 ```
 
 The backend defaults to `mongodb://127.0.0.1:27017/hotel-booking` during local development if `MONGODB_LOCAL_URI` is not set. Production requires `MONGODB_URI`.
+
+Set `CLIENT_URLS` in Render to `https://hotel-booking-site-nu-brown.vercel.app`. Multiple origins can be separated with commas. Do not include a trailing slash.
 
 ## Local Development
 
@@ -110,6 +113,30 @@ npm run lint      # Run ESLint
 npm --prefix backend run start  # Start the API
 npm --prefix backend run dev    # Start the API with nodemon
 npm --prefix backend run seed   # Reset and seed room data
+```
+
+For Render, set the service root directory to `backend`, use `npm install` as the build command, and use `npm start` as the start command. Render supplies the `PORT` environment variable automatically; the API listens on it through `process.env.PORT`.
+
+The current production URLs are:
+
+- Frontend: `https://hotel-booking-site-nu-brown.vercel.app`
+- Backend: `https://hotel-booking-site-pudw.onrender.com`
+
+Set these Render environment variables exactly:
+
+```env
+NODE_ENV=production
+MONGODB_URI=mongodb+srv://<user>:<password>@<cluster>/<database>
+CLIENT_URLS=https://hotel-booking-site-nu-brown.vercel.app
+ADMIN_API_KEY=<strong-random-secret>
+EMAIL_USER=<sender-email>
+EMAIL_PASS=<email-app-password>
+```
+
+Set this Vercel environment variable for Production, Preview, and Development as needed:
+
+```env
+VITE_API_URL=https://hotel-booking-site-pudw.onrender.com
 ```
 
 ## API Reference
@@ -167,7 +194,7 @@ Before deployment:
 - Set `NODE_ENV=production` so the backend uses `MONGODB_URI`.
 - Use a strong, rotated `ADMIN_API_KEY`.
 - Use an email provider and app password stored in deployment secrets.
-- Set `CLIENT_URL` to the deployed frontend origin.
+- Set `CLIENT_URLS` to the deployed frontend origin.
 - Set the frontend `VITE_API_URL` to the deployed API URL, or configure the production web server to proxy `/api`.
 - Run `npm run lint`, `npm run build`, and the backend seed process against the intended database.
 - Confirm `/api/health` returns database `connected`.

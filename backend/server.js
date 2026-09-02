@@ -12,6 +12,11 @@ import { notFound, errorHandler } from './middleware/errorHandler.js';
 
 const app = express();
 
+const allowedOrigins = (process.env.CLIENT_URLS || process.env.CLIENT_URL || 'http://localhost:5173')
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
 const retryDatabaseConnection = () => {
   const retryTimer = setTimeout(async () => {
     try {
@@ -26,7 +31,15 @@ const retryDatabaseConnection = () => {
   retryTimer.unref();
 };
 
-app.use(cors({ origin: process.env.CLIENT_URL || '*' }));
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error('Origin is not allowed by CORS.'));
+  },
+}));
 app.use(express.json());
 
 app.get('/', (req, res) => res.json({ status: 'Hotel booking API is running' }));

@@ -49,7 +49,7 @@ This checklist tracks the work required to take the hotel booking application fr
 - [ ] Configure Atlas Network Access for the production server.
 - [ ] Set `NODE_ENV=production` in the deployment environment.
 - [ ] Set `MONGODB_URI` to the production connection string.
-- [ ] Set `CLIENT_URL` to the deployed frontend origin.
+- [x] Set `CLIENT_URLS` to the deployed frontend origin.
 - [ ] Set a long, randomly generated `ADMIN_API_KEY`.
 - [ ] Configure a production email provider and app password.
 - [ ] Rotate all credentials that were exposed during development.
