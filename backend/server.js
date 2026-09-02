@@ -11,6 +11,7 @@ import Room from './models/Room.js';
 import { rooms } from './data/rooms.js';
 import { requireDatabase } from './middleware/database.js';
 import { notFound, errorHandler } from './middleware/errorHandler.js';
+import { verifyEmailConfiguration } from './utils/sendEmail.js';
 
 const app = express();
 
@@ -81,6 +82,12 @@ const startServer = async () => {
   try {
     await connectDB();
     await syncRoomCatalog();
+    try {
+      await verifyEmailConfiguration();
+      console.log('Email SMTP authentication succeeded');
+    } catch (err) {
+      console.error(`Email SMTP configuration failed: ${err.message}`);
+    }
   } catch (err) {
     console.error(
       `Database unavailable at startup: ${err.message}. The API will stay up, but database requests will be rejected until MongoDB is reachable.`

@@ -19,6 +19,14 @@ const getTransporter = () => {
   return transporter;
 };
 
+export const verifyEmailConfiguration = async () => {
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    throw new Error('Email credentials are not configured.');
+  }
+
+  await getTransporter().verify();
+};
+
 const formatDate = (date) =>
   new Date(date).toLocaleDateString('en-US', {
     weekday: 'short',
@@ -124,13 +132,15 @@ export const sendBookingConfirmation = async ({ orderId, guestName, email, booki
     throw new Error('Email credentials are not configured.');
   }
 
-  const transporter = getTransporter();
+  const mailTransporter = getTransporter();
   const html = buildReceiptHtml({ orderId, guestName, bookings });
 
-  await transporter.sendMail({
+  const result = await mailTransporter.sendMail({
     from: `"Sheraton Hotel & Resort" <${process.env.EMAIL_USER}>`,
     to: email,
     subject: `Booking Confirmation — Order #${orderId.slice(0, 8).toUpperCase()}`,
     html,
   });
+
+  return result.messageId;
 };
