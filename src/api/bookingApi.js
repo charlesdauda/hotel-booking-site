@@ -1,31 +1,35 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || '';
+
+const request = async (path, options, fallbackMessage) => {
+  try {
+    const res = await fetch(`${API_URL}${path}`, options);
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.message || fallbackMessage);
+    }
+
+    return res.json();
+  } catch (err) {
+    if (err instanceof TypeError) {
+      throw new Error('Cannot reach the booking server. Please check that the backend is running.');
+    }
+    throw err;
+  }
+};
 
 export async function submitBookings(items) {
-  const res = await fetch(`${API_URL}/api/bookings`, {
+  return request('/api/bookings', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ items }),
-  });
-
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    throw new Error(err.message || 'Something went wrong while confirming your booking.');
-  }
-
-  return res.json();
+  }, 'Something went wrong while confirming your booking.');
 }
 
 export async function checkAvailability({ checkIn, checkOut, guests }) {
-  const res = await fetch(`${API_URL}/api/rooms/check-availability`, {
+  return request('/api/rooms/check-availability', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ checkIn, checkOut, guests }),
-  });
-
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    throw new Error(err.message || 'Could not check availability right now.');
-  }
-
-  return res.json();
+  }, 'Could not check availability right now.');
 }

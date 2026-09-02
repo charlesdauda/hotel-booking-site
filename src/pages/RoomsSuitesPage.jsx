@@ -4,6 +4,7 @@ import fitness from '../assets/Images/fitness.jpg';
 import restaurant from '../assets/Images/restaurant.jpg';
 import spa from '../assets/Images/spa.jpg';
 import { FaDumbbell, FaUtensils, FaSpa } from 'react-icons/fa';
+import Rooms from '../components/Rooms';
 
 const features = [
   {
@@ -33,6 +34,8 @@ const RoomsSuitesPage = () => {
   return (
     <>
       <PageHeader title="Rooms & Suites" bgImage={hero1} />
+
+      <Rooms />
 
       {features.map((feature, i) => {
         const Icon = feature.icon;

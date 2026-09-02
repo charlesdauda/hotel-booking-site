@@ -150,7 +150,7 @@ const NavBar = () => {
               We'll be in touch shortly to finalize your stay.
             </p>
             <Link
-              to="/rooms-suites"
+              to="/rooms-suites#luxury-room-suite"
               onClick={() => setCartOpen(false)}
               className="bg-[#bf9b6a] hover:bg-[#a9875a] text-white font-semibold px-6 py-3 rounded-full transition-colors"
             >
@@ -169,7 +169,7 @@ const NavBar = () => {
               Add rooms to your booking to see them here.
             </p>
             <Link
-              to="/rooms-suites"
+              to="/rooms-suites#luxury-room-suite"
               onClick={() => setCartOpen(false)}
               className="bg-[#bf9b6a] hover:bg-[#a9875a] text-white font-semibold px-6 py-3 rounded-full transition-colors"
             >

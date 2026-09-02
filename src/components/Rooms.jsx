@@ -20,7 +20,7 @@ const Rooms = () => {
   const [bookingRoom, setBookingRoom] = useState(null);
 
   return (
-    <section className="bg-[#f6f2ea] py-20 md:py-28">
+    <section id="luxury-room-suite" className="bg-[#f6f2ea] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-4 mb-4">

@@ -4,6 +4,7 @@ import { useBooking } from "../context/useBooking";
 
 const BookingModal = ({ room, onClose, initialValues = {} }) => {
   const { addBooking } = useBooking();
+  const pricePerNight = room.pricePerNight ?? room.price;
   const today = new Date().toISOString().split('T')[0];
 
   const [form, setForm] = useState({
@@ -32,7 +33,7 @@ const BookingModal = ({ room, onClose, initialValues = {} }) => {
         )
       : 0;
 
-  const totalPrice = nights * room.price * Number(form.quantity || 1);
+  const totalPrice = nights * pricePerNight * Number(form.quantity || 1);
 
   const validate = () => {
     const next = {};
@@ -55,7 +56,7 @@ const BookingModal = ({ room, onClose, initialValues = {} }) => {
     addBooking({
       roomName: room.name,
       roomImage: room.image,
-      pricePerNight: room.price,
+      pricePerNight,
       guestName: form.fullName,
       email: form.email,
       phone: form.phone,
@@ -103,7 +104,7 @@ const BookingModal = ({ room, onClose, initialValues = {} }) => {
                 Reserve Your Stay
               </p>
               <h3 className="font-serif text-3xl text-gray-900 mb-1">{room.name}</h3>
-              <p className="text-gray-500 mb-8">${room.price} / Night</p>
+              <p className="text-gray-500 mb-8">${pricePerNight} / Night</p>
 
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div className="grid grid-cols-2 gap-4">
