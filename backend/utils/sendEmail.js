@@ -66,13 +66,13 @@ const buildReceiptHtml = ({ orderId, guestName, bookings }) => {
     .map(
       (b) => `
     <tr>
-      <td style="padding: 16px 0; border-bottom: 1px solid #eee;">
+      <td style="padding: 16px 0; border-bottom: 1px solid #e6ded5;">
         <p style="margin:0; font-family: Georgia, serif; font-size: 18px; color: #1a1a1a;">${b.roomName}</p>
-        <p style="margin: 4px 0 0; font-size: 13px; color: #888;">
+        <p style="margin: 4px 0 0; font-size: 13px; color: #6f6259;">
           ${formatDate(b.checkIn)} &rarr; ${formatDate(b.checkOut)} &middot; ${b.nights} night${b.nights > 1 ? 's' : ''} &times; ${b.quantity} room${b.quantity > 1 ? 's' : ''}
         </p>
       </td>
-      <td style="padding: 16px 0; border-bottom: 1px solid #eee; text-align: right; font-family: Georgia, serif; font-size: 18px; color: #bf9b6a; white-space: nowrap;">
+      <td style="padding: 16px 0; border-bottom: 1px solid #e6ded5; text-align: right; font-family: Georgia, serif; font-size: 18px; color: #a66f45; white-space: nowrap;">
         $${b.totalPrice}
       </td>
     </tr>`
@@ -82,15 +82,15 @@ const buildReceiptHtml = ({ orderId, guestName, bookings }) => {
   return `
   <!DOCTYPE html>
   <html>
-  <body style="margin:0; padding:0; background-color:#f6f2ea; font-family: Arial, Helvetica, sans-serif;">
-    <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f6f2ea; padding: 40px 0;">
+  <body style="margin:0; padding:0; background-color:#ffffff; font-family: Arial, Helvetica, sans-serif; color:#171513;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#ffffff; padding: 40px 0;">
       <tr>
         <td align="center">
-          <table width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff; max-width: 600px; width: 100%;">
+          <table width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff; max-width: 600px; width: 100%; border:1px solid #e6ded5;">
 
             <tr>
-              <td style="background-color:#0f2c3f; padding: 40px; text-align:center;">
-                <p style="margin:0; color:#bf9b6a; font-size:12px; letter-spacing:4px; text-transform:uppercase; font-weight:bold;">
+              <td style="background-color:#171513; padding: 40px; text-align:center;">
+                <p style="margin:0; color:#a66f45; font-size:12px; letter-spacing:4px; text-transform:uppercase; font-weight:bold;">
                   Sheraton Hotel &amp; Resort
                 </p>
                 <h1 style="margin:12px 0 0; color:#ffffff; font-family: Georgia, serif; font-size: 28px; font-weight:normal;">
@@ -99,34 +99,34 @@ const buildReceiptHtml = ({ orderId, guestName, bookings }) => {
               </td>
             </tr>
 
-            <tr><td style="height:6px; background-color:#bf9b6a;"></td></tr>
+            <tr><td style="height:6px; background-color:#a66f45;"></td></tr>
 
             <tr>
               <td style="padding: 40px;">
                 <p style="margin:0 0 4px; font-size:13px; color:#999; text-transform:uppercase; letter-spacing:2px;">
                   Confirmation
                 </p>
-                <p style="margin:0 0 24px; font-size:14px; color:#555;">
+                <p style="margin:0 0 24px; font-size:14px; color:#6f6259;">
                   Order #${orderId.slice(0, 8).toUpperCase()}
                 </p>
 
-                <p style="font-size:16px; color:#333; margin: 0 0 24px;">
+                <p style="font-size:16px; color:#171513; margin: 0 0 24px;">
                   Hi ${guestName}, thank you for booking with us. Here's a summary of your reservation:
                 </p>
 
                 <table width="100%" cellpadding="0" cellspacing="0">
                   ${rows}
                   <tr>
-                    <td style="padding: 20px 0 0; font-weight:bold; color:#0f2c3f; font-size:15px;">Total</td>
-                    <td style="padding: 20px 0 0; text-align:right; font-family: Georgia, serif; font-size:24px; color:#0f2c3f;">$${total}</td>
+                    <td style="padding: 20px 0 0; font-weight:bold; color:#171513; font-size:15px;">Total</td>
+                    <td style="padding: 20px 0 0; text-align:right; font-family: Georgia, serif; font-size:24px; color:#a66f45;">$${total}</td>
                   </tr>
                 </table>
 
                 <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 32px;">
                   <tr>
-                    <td style="background-color:#f5ede0; padding: 20px; font-size:13px; color:#555; line-height:1.6;">
+                    <td style="background-color:#faf7f4; border-left:4px solid #a66f45; padding: 20px; font-size:13px; color:#6f6259; line-height:1.6;">
                       We'll be in touch shortly to finalize your stay. If you have any questions, reach us anytime at
-                      <a href="mailto:charlesdauda676@gmail.com" style="color:#bf9b6a;">charlesdauda676@gmail.com</a>
+                      <a href="mailto:charlesdauda676@gmail.com" style="color:#a66f45;">charlesdauda676@gmail.com</a>
                       or call +233 546 627 2444.
                     </td>
                   </tr>
@@ -135,8 +135,8 @@ const buildReceiptHtml = ({ orderId, guestName, bookings }) => {
             </tr>
 
             <tr>
-              <td style="padding: 24px 40px; text-align:center; background-color:#0f2c3f;">
-                <p style="margin:0; color:#8a99a3; font-size:12px;">
+              <td style="padding: 24px 40px; text-align:center; background-color:#171513;">
+                <p style="margin:0; color:#d8c9bd; font-size:12px;">
                   Sheraton Hotel &amp; Resort &middot; McCarthy Hills, Accra, Ghana
                 </p>
               </td>
