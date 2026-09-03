@@ -15,6 +15,9 @@ import { verifyEmailConfiguration } from './utils/sendEmail.js';
 
 const app = express();
 
+const emailProvider = process.env.EMAIL_PROVIDER?.trim().toLowerCase()
+  || (process.env.RESEND_API_KEY ? 'resend' : 'gmail');
+
 const allowedOrigins = [
   process.env.CLIENT_URLS,
   process.env.CLIENT_URL,
@@ -84,7 +87,7 @@ const startServer = async () => {
     await syncRoomCatalog();
     try {
       await verifyEmailConfiguration();
-      console.log('Email SMTP authentication succeeded');
+      console.log(`${emailProvider} email configuration verified`);
     } catch (err) {
       console.error(`Email SMTP configuration failed: ${err.message}`);
     }

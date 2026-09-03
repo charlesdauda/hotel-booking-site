@@ -2,7 +2,9 @@ import nodemailer from 'nodemailer';
 
 let transporter;
 
-const useResend = process.env.EMAIL_PROVIDER === 'resend';
+const isResendProvider = () =>
+  process.env.EMAIL_PROVIDER?.trim().toLowerCase() === 'resend' ||
+  Boolean(process.env.RESEND_API_KEY);
 
 const getTransporter = () => {
   if (!transporter) {
@@ -26,9 +28,17 @@ const getTransporter = () => {
 };
 
 export const verifyEmailConfiguration = async () => {
-  if (useResend) {
+  if (isResendProvider()) {
     if (!process.env.RESEND_API_KEY || !process.env.EMAIL_FROM) {
       throw new Error('Resend is not configured. Set RESEND_API_KEY and EMAIL_FROM.');
+    }
+
+    const response = await fetch('https://api.resend.com/domains', {
+      headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}` },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Resend API rejected the key (HTTP ${response.status}).`);
     }
 
     return;
@@ -144,7 +154,7 @@ const buildReceiptHtml = ({ orderId, guestName, bookings }) => {
 export const sendBookingConfirmation = async ({ orderId, guestName, email, bookings }) => {
   const html = buildReceiptHtml({ orderId, guestName, bookings });
 
-  if (useResend) {
+  if (isResendProvider()) {
     if (!process.env.RESEND_API_KEY || !process.env.EMAIL_FROM) {
       throw new Error('Resend is not configured. Set RESEND_API_KEY and EMAIL_FROM.');
     }
