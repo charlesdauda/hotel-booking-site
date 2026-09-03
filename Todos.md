@@ -43,18 +43,6 @@ This checklist tracks the work required to take the hotel booking application fr
 
 ## Before Production
 
-### Configuration and Security
-
-- [ ] Create a production-only MongoDB Atlas database and least-privilege database user.
-- [ ] Configure Atlas Network Access for the production server.
-- [ ] Set `NODE_ENV=production` in the deployment environment.
-- [ ] Set `MONGODB_URI` to the production connection string.
-- [x] Set `CLIENT_URLS` to the deployed frontend origin.
-- [ ] Set a long, randomly generated `ADMIN_API_KEY`.
-- [ ] Configure a production email provider and app password.
-- [ ] Rotate all credentials that were exposed during development.
-- [ ] Confirm no `.env` files, passwords, or API keys are tracked by Git.
-
 ### Testing and Reliability
 
 - [ ] Add automated backend tests for room listing and availability.
@@ -66,24 +54,4 @@ This checklist tracks the work required to take the hotel booking application fr
 - [ ] Add centralized error monitoring and uptime monitoring.
 - [ ] Configure MongoDB backups and verify a restore procedure.
 
-### Deployment
-
-- [ ] Choose hosting for the frontend and backend.
-- [ ] Configure the production API URL with `VITE_API_URL`.
-- [ ] Configure the production web server or hosting platform to proxy `/api` where required.
-- [ ] Run the seed process only against the intended staging or empty production database.
-- [ ] Run `npm run lint` and `npm run build` in CI before deployment.
-- [ ] Enable HTTPS and verify CORS from the deployed frontend.
-- [ ] Verify `/api/health` returns `database: connected` after deployment.
-- [ ] Complete a real staging booking from room selection through email confirmation.
-- [ ] Document rollback, support, and incident-response procedures.
-
-## Future Improvements
-
-- [ ] Add a dedicated admin dashboard instead of header-key-only administration.
-- [ ] Add booking cancellation and guest self-service lookup.
-- [ ] Add payment processing and payment status tracking.
-- [ ] Replace room-name references with stable room IDs.
-- [ ] Add room image management and availability calendars.
-- [ ] Add pagination and filtering for admin booking lists.
 
